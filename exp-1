@@ -1,0 +1,80 @@
+create table student(regno int(6),name char(14),gender char(7),dob int(10),mobileno int (10),city char(10));
+Query OK, 0 rows affected, 3 warnings (0.02 sec)
+
+mysql> desc students;
+ERROR 1146 (42S02): Table 'students.students' doesn't exist
+mysql> desc student;
++----------+----------+------+-----+---------+-------+
+| Field    | Type     | Null | Key | Default | Extra |
++----------+----------+------+-----+---------+-------+
+| regno    | int      | YES  |     | NULL    |       |
+| name     | char(14) | YES  |     | NULL    |       |
+| gender   | char(7)  | YES  |     | NULL    |       |
+| dob      | int      | YES  |     | NULL    |       |
+| mobileno | int      | YES  |     | NULL    |       |
+| city     | char(10) | YES  |     | NULL    |       |
++----------+----------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> create table faculty(facno int(7),facname char(10), facgender char(10),facdob int(10),facmobilno int(10),faccity char(10));
+Query OK, 0 rows affected, 3 warnings (0.01 sec)
+
+mysql> desc faculty;
++------------+----------+------+-----+---------+-------+
+| Field      | Type     | Null | Key | Default | Extra |
++------------+----------+------+-----+---------+-------+
+| facno      | int      | YES  |     | NULL    |       |
+| facname    | char(10) | YES  |     | NULL    |       |
+| facgender  | char(10) | YES  |     | NULL    |       |
+| facdob     | int      | YES  |     | NULL    |       |
+| facmobilno | int      | YES  |     | NULL    |       |
+| faccity    | char(10) | YES  |     | NULL    |       |
++------------+----------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> create table department(deptno int(7),depthead char(10),deptname char(10));
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+mysql> desc department;
++----------+----------+------+-----+---------+-------+
+| Field    | Type     | Null | Key | Default | Extra |
++----------+----------+------+-----+---------+-------+
+| deptno   | int      | YES  |     | NULL    |       |
+| depthead | char(10) | YES  |     | NULL    |       |
+| deptname | char(10) | YES  |     | NULL    |       |
++----------+----------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> create table course(coursedesc char(10),courseno int(10),coursetype char(20),semno int(20),hallno int(10),facno int(10));
+Query OK, 0 rows affected, 4 warnings (0.01 sec)
+
+mysql> desc course;
++------------+----------+------+-----+---------+-------+
+| Field      | Type     | Null | Key | Default | Extra |
++------------+----------+------+-----+---------+-------+
+| coursedesc | char(10) | YES  |     | NULL    |       |
+| courseno   | int      | YES  |     | NULL    |       |
+| coursetype | char(20) | YES  |     | NULL    |       |
+| semno      | int      | YES  |     | NULL    |       |
+| hallno     | int      | YES  |     | NULL    |       |
+| facno      | int      | YES  |     | NULL    |       |
++------------+----------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> alter table faculty add dept char(10);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc faculty;
++------------+----------+------+-----+---------+-------+
+| Field      | Type     | Null | Key | Default | Extra |
++------------+----------+------+-----+---------+-------+
+| facno      | int      | YES  |     | NULL    |       |
+| facname    | char(10) | YES  |     | NULL    |       |
+| facgender  | char(10) | YES  |     | NULL    |       |
+| facdob     | int      | YES  |     | NULL    |       |
+| facmobilno | int      | YES  |     | NULL    |       |
+| faccity    | char(10) | YES  |     | NULL    |       |
+| dept       | char(10) | YES  |     | NULL    |       |
++------------+----------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
