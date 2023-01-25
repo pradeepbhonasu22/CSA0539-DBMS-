@@ -1,0 +1,70 @@
+mysql> alter table student add primary key(city);
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc students;
+ERROR 1146 (42S02): Table 'students.students' doesn't exist
+mysql> desc student;
++----------+----------+------+-----+---------+-------+
+| Field    | Type     | Null | Key | Default | Extra |
++----------+----------+------+-----+---------+-------+
+| regno    | int      | YES  |     | NULL    |       |
+| name     | char(14) | YES  |     | NULL    |       |
+| gender   | char(7)  | YES  |     | NULL    |       |
+| dob      | int      | YES  |     | NULL    |       |
+| mobileno | int      | YES  |     | NULL    |       |
+| city     | char(10) | NO   | PRI | NULL    |       |
++----------+----------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> alter table faculty add primary key (fac no);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'no)' at line 1
+mysql> alter table faculty add primary key(facno);
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc faculty;
++------------+----------+------+-----+---------+-------+
+| Field      | Type     | Null | Key | Default | Extra |
++------------+----------+------+-----+---------+-------+
+| facno      | int      | NO   | PRI | NULL    |       |
+| facname    | char(10) | YES  |     | NULL    |       |
+| facgender  | char(10) | YES  |     | NULL    |       |
+| facdob     | int      | YES  |     | NULL    |       |
+| facmobilno | int      | YES  |     | NULL    |       |
+| faccity    | char(10) | YES  |     | NULL    |       |
+| dept       | char(10) | YES  |     | NULL    |       |
++------------+----------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> alter table department add primary key(deptno);
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc department;
++----------+----------+------+-----+---------+-------+
+| Field    | Type     | Null | Key | Default | Extra |
++----------+----------+------+-----+---------+-------+
+| deptno   | int      | NO   | PRI | NULL    |       |
+| depthead | char(10) | YES  |     | NULL    |       |
+| deptname | char(10) | YES  |     | NULL    |       |
++----------+----------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> alter table course add primary key(courseno);
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc course;
++------------+----------+------+-----+---------+-------+
+| Field      | Type     | Null | Key | Default | Extra |
++------------+----------+------+-----+---------+-------+
+| coursedesc | char(10) | YES  |     | NULL    |       |
+| courseno   | int      | NO   | PRI | NULL    |       |
+| coursetype | char(20) | YES  |     | NULL    |       |
+| semno      | int      | YES  |     | NULL    |       |
+| hallno     | int      | YES  |     | NULL    |       |
+| facno      | int      | YES  |     | NULL    |       |
++------------+----------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
