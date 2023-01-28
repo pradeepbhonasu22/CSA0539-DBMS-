@@ -1,0 +1,9 @@
+mysql> insert into student values('pradeep',18,'cse','nellore',1474
+414);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select* from student;
++---------+-------+------+---------+---------+
+| name    | regno | dept | city    | phoneno |
++---------+-------+------+---------+---------+
+| pradeep |    18 | cse  | nellore | 1474414 |
