@@ -1,0 +1,49 @@
+mysql> use carcompany;
+Database changed
+mysql> create table carcompany(customername varchar(30),branch varchar(40),vehiclenumber int(5),address varchar(50));
+Query OK, 0 rows affected, 1 warning (0.03 sec)
+
+mysql> desc carcompany;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| customername  | varchar(30) | YES  |     | NULL    |       |
+| branch        | varchar(40) | YES  |     | NULL    |       |
+| vehiclenumber | int         | YES  |     | NULL    |       |
+| address       | varchar(50) | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> insert into carcompany values('rajesh','reliance','1234','chennai');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into carcompany values('ram','FCA','2345','hyderabad');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into carcompany values('sravani','honda','5678','bangalore');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into carcompany values('vivek','toyota','4678','vijayawada');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from carcompany;
++--------------+----------+---------------+------------+
+| customername | branch   | vehiclenumber | address    |
++--------------+----------+---------------+------------+
+| rajesh       | reliance |          1234 | chennai    |
+| ram          | FCA      |          2345 | hyderabad  |
+| sravani      | honda    |          5678 | bangalore  |
+| vivek        | toyota   |          4678 | vijayawada |
++--------------+----------+---------------+------------+
+4 rows in set (0.00 sec)
+
+mysql> select customername,branch,address from carcompany;
++--------------+----------+------------+
+| customername | branch   | address    |
++--------------+----------+------------+
+| rajesh       | reliance | chennai    |
+| ram          | FCA      | hyderabad  |
+| sravani      | honda    | bangalore  |
+| vivek        | toyota   | vijayawada |
++--------------+----------+------------+
+4 rows in set (0.00 sec)
