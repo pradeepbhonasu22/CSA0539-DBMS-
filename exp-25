@@ -1,0 +1,83 @@
+mysql> use studentprogress;
+Database changed
+mysql> create table studentprogress(name varchar(40),grades varchar(1),marks int(2),gender int(1));
+Query OK, 0 rows affected, 2 warnings (0.02 sec)
+
+mysql> desc studentprogress;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| name   | varchar(40) | YES  |     | NULL    |       |
+| grades | varchar(1)  | YES  |     | NULL    |       |
+| marks  | int         | YES  |     | NULL    |       |
+| gender | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> insert into studentprogress values('sravani','A','98','F');
+ERROR 1366 (HY000): Incorrect integer value: 'F' for column 'gender' at row 1
+mysql> insert into studentprogress values('sravani','A','98','1');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into studentprogress values('varshitha','B','97','2');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into studentprogress values('ramya','C','96','3');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into studentprogress values('geetha','D','95','4');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from studentprogress;
++-----------+--------+-------+--------+
+| name      | grades | marks | gender |
++-----------+--------+-------+--------+
+| sravani   | A      |    98 |      1 |
+| varshitha | B      |    97 |      2 |
+| ramya     | C      |    96 |      3 |
+| geetha    | D      |    95 |      4 |
++-----------+--------+-------+--------+
+4 rows in set (0.00 sec)
+
+mysql> update studentprogress set name='ramya' where marks='99';
+Query OK, 0 rows affected (0.01 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+mysql> select * from studentprogress;
++-----------+--------+-------+--------+
+| name      | grades | marks | gender |
++-----------+--------+-------+--------+
+| sravani   | A      |    98 |      1 |
+| varshitha | B      |    97 |      2 |
+| ramya     | C      |    96 |      3 |
+| geetha    | D      |    95 |      4 |
++-----------+--------+-------+--------+
+4 rows in set (0.00 sec)
+
+mysql> update studentprogress set marks='99' where name='ramya';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from studentprogress;
++-----------+--------+-------+--------+
+| name      | grades | marks | gender |
++-----------+--------+-------+--------+
+| sravani   | A      |    98 |      1 |
+| varshitha | B      |    97 |      2 |
+| ramya     | C      |    99 |      3 |
+| geetha    | D      |    95 |      4 |
++-----------+--------+-------+--------+
+4 rows in set (0.00 sec)
+
+mysql> delete from studentprogress where name='geetha';
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from studentprogress;
++-----------+--------+-------+--------+
+| name      | grades | marks | gender |
++-----------+--------+-------+--------+
+| sravani   | A      |    98 |      1 |
+| varshitha | B      |    97 |      2 |
+| ramya     | C      |    99 |      3 |
++-----------+--------+-------+--------+
+3 rows in set (0.00 sec)
